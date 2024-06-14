@@ -11,9 +11,11 @@ interface UsersState {
 
 const usersAdapter = createEntityAdapter<User>();
 
+const initState = usersAdapter.getInitialState();
+
 export const usersSlice = createSlice({
   name: "users",
-  initialState: usersAdapter.getInitialState(),
+  initialState: initState,
   reducers: {
     clickedUser: (state, action: PayloadAction<number>) => {
       const id = action.payload;

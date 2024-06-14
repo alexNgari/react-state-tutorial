@@ -12,13 +12,16 @@ const rootElement = document.getElementById("root")!;
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(
-  <React.StrictMode>
-    <App />,{/* <OtherApp /> */}
-    {/* <Provider store={store}>
+  <>
+    {/* <React.StrictMode> */}
+    {/* <App />, */}
+    {/* <OtherApp /> */}
+    <Provider store={store}>
       <OtherOtherApp />
-    </Provider> */}
+    </Provider>
     {/* <Provider store={normalizedStore}>
       <NormalizedStateApp />
     </Provider> */}
-  </React.StrictMode>,
+    {/* </React.StrictMode> */}
+  </>,
 );

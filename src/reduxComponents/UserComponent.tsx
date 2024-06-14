@@ -1,17 +1,23 @@
 import { FunctionComponent, useRef } from "react";
 import type { User } from "../types";
-import { useDispatch } from "react-redux";
-import { clickedUser } from "../redux/usersSlice";
+import { useDispatch, useSelector } from "react-redux";
+import type { RootState } from "../redux/store";
+import { clickedUser, userSelector } from "../redux/usersSlice";
 
 import "../styles.css";
 
 export const UserComponent: FunctionComponent<{
-  user: User;
-}> = ({ user }) => {
+  userId: number;
+}> = ({ userId }) => {
   const renders = useRef(0);
+  const user = useSelector((state: RootState) => userSelector(state, userId));
   const dispatch = useDispatch();
 
   renders.current++;
+
+  if (!user) {
+    return null;
+  }
 
   return (
     <li
