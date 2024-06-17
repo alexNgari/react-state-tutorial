@@ -2,7 +2,7 @@ import { FunctionComponent, useRef } from "react";
 import type { User } from "../types";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../redux/store";
-import { clickedUser, userSelector } from "../redux/usersSlice";
+import { clickedUser, userSelector } from "../advancedRedux/usersSlice";
 
 import "../styles.css";
 

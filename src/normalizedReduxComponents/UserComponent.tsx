@@ -22,7 +22,7 @@ export const UserComponent: FunctionComponent<{
       <span className="">{user.name}</span>
       <span>
         <span>Clicks: {user.count ?? 0}</span>
-        <span className="px-4">Renders: {renders.current}</span>
+        {/* <span className="px-4">Renders: {renders.current}</span> */}
       </span>
     </li>
   );

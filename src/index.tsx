@@ -18,15 +18,15 @@ root.render(
     {/* <React.StrictMode> */}
     {/* <App />, */}
     {/* <ContextApp /> */}
-    <Provider store={store}>
+    {/* <Provider store={store}>
       <ReduxApp />
-    </Provider>
+    </Provider> */}
     {/* <Provider store={advancedStore}>
       <AdvancedReduxApp />
     </Provider> */}
-    {/* <Provider store={normalizedStore}>
+    <Provider store={normalizedStore}>
       <NormalizedStateApp />
-    </Provider> */}
+    </Provider>
     {/* </React.StrictMode> */}
   </>,
 );
