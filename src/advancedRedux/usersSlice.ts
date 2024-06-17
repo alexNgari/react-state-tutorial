@@ -44,4 +44,29 @@ export const { clickedUser } = usersSlice.actions;
 // Other code such as selectors can use the imported `RootState` type
 export const usersSelector = (state: RootState) => state.users.usersList;
 
+let idsSelectorCache: number[] = [];
+export const idsSelector = (state: RootState) => {
+  const newIds = state.users.usersList.map((user) => user.id);
+  if (!compareIdsArrayContents(idsSelectorCache, newIds)) {
+    idsSelectorCache = newIds;
+  }
+  return idsSelectorCache;
+};
+
+export const userSelector = (state: RootState, id: number) => {
+  return state.users.usersList.find((user) => user.id === id);
+};
+
+const compareIdsArrayContents = (ids1: number[], ids2: number[]) => {
+  if (ids1.length !== ids2.length) {
+    return false;
+  }
+  ids1.forEach((id, index) => {
+    if (id !== ids2[index]) {
+      return false;
+    }
+  });
+  return true;
+};
+
 export default usersSlice.reducer;

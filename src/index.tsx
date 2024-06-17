@@ -2,10 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import { store as advancedStore } from "./advancedRedux/store";
 import { store as normalizedStore } from "./normalizedRedux/store";
 import App from "./App";
-import OtherApp from "./OtherApp";
-import OtherOtherApp from "./OtherOtherApp";
+import ContextApp from "./ContextApp";
+import ReduxApp from "./ReduxApp";
+import AdvancedReduxApp from "./AdvancedReduxApp";
 import NormalizedStateApp from "./NormalizedStateApp";
 
 const rootElement = document.getElementById("root")!;
@@ -15,10 +17,13 @@ root.render(
   <>
     {/* <React.StrictMode> */}
     {/* <App />, */}
-    {/* <OtherApp /> */}
+    {/* <ContextApp /> */}
     <Provider store={store}>
-      <OtherOtherApp />
+      <ReduxApp />
     </Provider>
+    {/* <Provider store={advancedStore}>
+      <AdvancedReduxApp />
+    </Provider> */}
     {/* <Provider store={normalizedStore}>
       <NormalizedStateApp />
     </Provider> */}

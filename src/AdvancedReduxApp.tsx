@@ -1,10 +1,10 @@
 import "./styles.css";
-import { FillerComponent } from "./reduxComponents/FillerComponent";
+import { FillerComponent } from "./advancedReduxComponents/FillerComponent";
 import { useEffect } from "react";
-import { fetchUsersThunk } from "./redux/fetchUsersThunk";
-import { useAppDispatch } from "./redux/store";
+import { fetchUsersThunk } from "./advancedRedux/fetchUsersThunk";
+import { useAppDispatch } from "./advancedRedux/store";
 
-export default function OtherOtherApp() {
+export default function AdvancedReduxApp() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
